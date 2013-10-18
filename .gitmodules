@@ -1,0 +1,3 @@
+[submodule "googlesitemaps"]
+	path = googlesitemaps
+	url = https://github.com/silverstripe-labs/silverstripe-googlesitemaps.git
