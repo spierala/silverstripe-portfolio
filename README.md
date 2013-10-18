@@ -30,3 +30,9 @@ Edit this files to configure the website and the database connection:
 _ss_environment.php
 
 portfolio/_config/general.yml
+
+**Static Publisher:**
+The module is ready to use. You just need to edit the .htaccess file and uncomment this line: 
+`RewriteRule .* staticpublisher/main.php?url=%1&%{QUERY_STRING} [L]` and remove this line: `RewriteRule .* framework/main.php?url=%1&%{QUERY_STRING} [L]`
+
+to create the static cache you have to run this in your browser: /dev/tasks/RebuildStaticCacheTask
