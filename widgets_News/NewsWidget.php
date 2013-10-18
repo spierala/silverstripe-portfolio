@@ -2,11 +2,11 @@
 
 class NewsWidget extends Widget {
     static $db = array(
-        "Title" => "Varchar",
-        "CssClass" => "Varchar"
+        "Title" => "Varchar"
     );
 
-    static $cmsTitle = "News";
+    static $cmsTitle = "News";   
+    static $description = "Display News which are created in PortfolioModelAdmin with ShowInHeader activated";
 
     public function Title(){
         return $this->Title;
@@ -19,8 +19,7 @@ class NewsWidget extends Widget {
 
     public function getCMSFields() {
         return new FieldList(
-            new TextField("Title", "Title"),
-            new TextField("CssClass", "CssClass")
+            new TextField("Title", "Title")
         );
     }
 }

@@ -3,8 +3,7 @@
 class GeneralWidget extends Widget {
     static $db = array(
         "Title" => "Varchar",
-        "LinkLabel" => "Varchar",
-        "CssClass" => "Varchar"
+        "LinkLabel" => "Varchar"
     );
 
     static $has_one = array(
@@ -12,6 +11,7 @@ class GeneralWidget extends Widget {
     );
 
     static $cmsTitle = "General";
+    static $description = "General Widget to display a Title and an internal Link";
     
     public function getCustomTitle(){
     	return $this->Title;
@@ -22,15 +22,11 @@ class GeneralWidget extends Widget {
     }
 
     public function getCMSFields() {
-//        $colorDropDown = new DropdownField('ColorID', 'Color', Color::get()->sort('Name')->map('ID', 'Name'));
-//        $colorDropDown->setEmptyString('(Select Color)');
-        $pageDropDown = new DropdownField('SiteTreeID', 'SiteTree', SiteTree::get()->sort('Title')->map('ID', 'Title'));
+        $pageDropDown = new DropdownField('SiteTreeID', 'LinkedPage', SiteTree::get()->sort('Title')->map('ID', 'Title'));
         $pageDropDown->setEmptyString('(Select Page)');
-        //print_r($treedropdownfield);
         return new FieldList(
             new TextField("Title", "Title"),
             new TextField("LinkLabel", "LinkLabel"),
-            new TextField("CssClass", "CssClass"),
             $pageDropDown
         );
     }

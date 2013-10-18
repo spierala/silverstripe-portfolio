@@ -2,10 +2,7 @@
 
 class LocationWidget extends Widget {
     static $cmsTitle = "Location";
-
-    static $db = array(
-        "CssClass" => "Varchar"
-    );
+    static $description = "Display Location (set in Settings)";
 
     public function getLocation(){
         return SiteConfig::current_site_config()->Location;
@@ -13,12 +10,6 @@ class LocationWidget extends Widget {
 
     public function getLocationLabel(){
         return SiteConfig::current_site_config()->LocationLabel;
-    }
-
-    public function getCMSFields() {
-        return new FieldList(
-            new TextField("CssClass", "CssClass")
-        );
     }
 }
 
