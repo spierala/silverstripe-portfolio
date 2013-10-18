@@ -1,0 +1,10 @@
+---
+Name: myroutes
+After: framework/routes#coreroutes
+---
+Director:
+  rules:
+    'category/$Slug': 'Category_Controller'
+    'blog-category/$Slug': 'BlogCategory_Controller'
+    'tag/ilike/$Slug': 'Tag_Controller'
+    'tag/$Slug': 'Tag_Controller'

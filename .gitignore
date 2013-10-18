@@ -1,0 +1,6 @@
+*.DS_Store
+/.idea
+/cache
+.sass-cache/
+/silverstripe-cache/
+log/

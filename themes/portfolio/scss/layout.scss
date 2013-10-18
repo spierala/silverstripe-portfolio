@@ -1,0 +1,839 @@
+$common-spacing: 10px; /*sprite spacing*/
+$common-position: 100%;
+
+@import "_variables.scss";
+@import "compass/reset";
+@import "compass/typography/text/replacement";
+@import "compass/css3/opacity";
+@import "compass/utilities/general/clearfix";
+
+@import "sprite/common/*.png";
+
+body{
+    background: $light-grey-bg;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+/* GENERAL
+-------------------------------------------- */
+.more-info-box {
+    @extend .content;
+    float:left;
+    width: 235px;
+    .attribute-box {
+        font-family: 'Open Sans',sans-serif;
+        font-size: 11px;
+        border-bottom: 1px dotted #fff;
+        margin: 0 0 10px;
+        padding: 0 0 7px;
+    }
+    .title {
+        color: #fff;
+        padding: 0 0 5px;
+    }
+}
+
+.date-location{
+    color: $light-grey;
+    font-size: 11px;
+    line-height: 13px;
+    margin-bottom: 10px;
+    display: block;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* LAYOUT
+-------------------------------------------- */
+.header {
+    margin: 0 0 0 280px;
+    top: 0;
+    height: 83px;
+    background: $light-grey-bg;
+    overflow: hidden;
+}
+
+.sidebar {
+    background: $light-green;
+    width: $sidebar-width;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.main {
+    position: static;
+    height: 100%;
+}
+
+.layout {
+    margin-left: 280px;
+}
+
+.content-container {
+    @include clearfix;
+}
+
+.content{
+    padding: 20px 30px;
+}
+
+.left-col {
+    float:left;
+    max-width: 500px;
+}
+
+/* HEADER
+-------------------------------------------- */
+.header {
+    .list, .text, .link {
+        color: #606060;
+        font-family: 'Open Sans',sans-serif;
+        font-size: 11px;
+        line-height: 14px;
+        padding-top: 5px;
+    }
+    .widgets {
+        width: 10000px;
+    }
+    .widget-holder {
+        position: relative;
+        float: left;
+    }
+    .widget{
+        display: block;
+        height: 73px;
+        min-width: 200px;
+        float: left;
+        margin-right: 10px;
+        padding: 16px 30px 0;
+        color: $dark-grey;
+    }
+    .widget-header {
+        text-transform: uppercase;
+        font-size: 12px;
+    }
+    .widget-icon {
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        top: 0;
+        left: 30px;
+        background: $dark-green;
+        &.available {
+            background: $light-green;
+        }
+        &.action {
+            background: $medium-green;
+        }
+    }
+}
+
+/* SIDEBAR
+-------------------------------------------- */
+.sidebar {
+    .top-deco  {
+        @include common-sprite(bg-pixels-big);
+        height: 83px;
+        width: $sidebar-width;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .bottom-deco {
+        @include common-sprite(bg-pixels-small);
+        height: 10px;
+        width: $sidebar-width;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+    .about {
+        @include clearfix;
+        margin: 0 17px 30px 17px;
+        padding: 110px 0 10px 0;
+        border-bottom: 1px dotted #fff;
+    }
+    .about img {
+        float:left;
+        margin-right: 10px;
+        border: 1px solid #FFFFFF;
+    }
+    .tagline {
+        color: #fff;
+        padding: 3px 5px 0 5px;
+        font-family: 'Open Sans', sans-serif;
+        font-style: italic;
+        line-height: 16px;
+    }
+}
+
+/* NAVIGATION
+-------------------------------------------- */
+.navigation-main {
+    a {
+        color: #fff;
+        text-transform: none;
+        display: block;
+        font-size: 15px;
+        display: block;
+        padding: 6px 0 0 25px;
+        text-transform: uppercase;
+        display: block;
+        height: 25px;
+        font-family: 'Open Sans', sans-serif;
+        overflow: hidden;
+        &:hover {
+            background: $medium-green;
+        }
+    }
+    .current > a, .current > a:hover {
+        @include common-sprite(nav-arrow-white);
+        background-color: $dark-green !important;
+        text-decoration: none;
+    }
+    .level-2 {
+        a {
+            height: 23px;
+            font-size: 12px;
+            padding: 8px 0 0 35px;
+        }
+    }
+
+}
+
+.navigation-bottom {
+    position: absolute;
+    text-align: center;
+    width: $sidebar-width;
+    padding-top: 5px;
+    bottom: 15px;
+    font-family: 'Open Sans', sans-serif;
+    a{
+        color: #fff;
+        font-size: 13px;
+        padding: 0 5px;
+    }
+    a:hover{
+        text-decoration: underline;
+    }
+    .text {
+        color: #909a2c;
+        padding: 7px 0 5px 0;
+        display: block;
+        font-size: 11px;
+    }
+}
+
+/* STANDARD PAGE
+-------------------------------------------- */
+.page {
+    //TODO: better use mixin
+    .attribute-box {
+        border-bottom: 1px dotted $dark-grey;
+        .title {
+            color: $dark-grey;
+        }
+    }
+}
+
+/* PROJECTS PAGE (PORTFOLIO)
+-------------------------------------------- */
+//TODO: maybe use this style more
+.projects-page--title {
+    @include hide-text();
+    position: absolute;
+}
+
+.projects-page--projects-container {
+    overflow: hidden;
+    &.iso {
+        position: relative;
+        overflow: visible;
+        background: $images-bg;
+    }
+}
+
+.projects-page--project {
+    position: relative;
+    display: block;
+    float: left;
+    text-decoration: none;
+    cursor: pointer;
+    &.knockout {
+        img {
+            @include opacity(0.4);
+        }
+        .project-preview-text {
+            visibility: hidden;
+        }
+    }
+    &.iso {
+        position: absolute;
+    }
+    &.mouseover {
+        z-index: 1;
+        img{
+            @include hide-text;
+            position: absolute;
+            top: 0;
+        }
+    }
+    img {
+        @include hide-text;
+    }
+    .project-content {
+        position: relative;
+    }
+    .project-preview-text {
+        background: $dark-grey;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+        border: 1px solid #4C4C4C;
+    }
+    .project-title {
+        text-align: center;
+        color: #fff;
+        padding: 15px 10px 10px 10px;
+        border-bottom: 1px solid #4C4C4C;}
+    .project-text {
+        color: #fff;
+        margin: 0;
+        padding: 10px 20px 15px 20px;
+        font-size: 11px;
+        font-family: 'Open Sans', sans-serif;
+    }
+}
+
+/* PROJECT PAGE
+-------------------------------------------- */
+.project-page {
+    background-color: $dark-grey;
+    color: #fff;
+    position: relative;
+    padding-bottom: 10px;
+    @include clearfix;
+    a {
+        color: #a4c400;
+    }
+}
+
+/* BLOGENTRIES PAGE
+-------------------------------------------- */
+.blogentries-page {
+    .content {
+        @include clearfix;
+    }
+    .article {
+        max-width: 315px;
+        min-height: 140px;
+        float: left;
+        margin: 0 35px 15px 0;
+    }
+    .more-info {
+        font-size: 12px;
+        color: $light-grey;
+    }
+    .heading-1 {
+        padding: 5px 0;
+    }
+}
+
+/* BLOGENTRY PAGE
+-------------------------------------------- */
+.blogentry-page {
+    position: relative;
+    .scrollPaneContainer{
+        background: $dark-grey;
+    }
+    .page-navigation{
+        right: 0;
+    }
+    .comments-header{
+        margin-bottom: 8px;
+    }
+    .comment{
+        margin-bottom: 15px;
+        border-bottom: 1px dotted $dark-grey;
+    }
+    .attribute-box {
+        border-bottom: 1px dotted $dark-grey;
+        .title {
+            color: $dark-grey;
+        }
+    }
+}
+
+/* MAP PAGE
+-------------------------------------------- */
+.map-container {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+}
+
+#map_canvas {
+    width: 100%;
+    height: 100%;
+}
+
+/* TAG PAGE
+-------------------------------------------- */
+.tag-page {
+    .attribute-box {
+        border-bottom: 1px dotted $dark-grey;
+        .title {
+            color: $dark-grey;
+        }
+        .list {
+            font-size: 12px;
+        }
+        .list-item {
+            margin-bottom: 5px;
+        }
+    }
+    .tag-links {
+        list-style: none;
+        margin-left: 0 !important;
+    }
+}
+
+/* ANALYTICS PAGE
+-------------------------------------------- */
+.analytics-page {
+    .inner {
+        @include clearfix;
+    }
+    .attribute-box {
+        border-bottom: 1px dotted $dark-grey;
+        .title {
+            color: $dark-grey;
+        }
+    }
+}
+
+/* FORM
+-------------------------------------------- */
+.form{
+    a.btn, button, input[type="submit"] {
+        background: #4FAC41 !important;
+        color: #fff !important;
+        display: inline-block;
+        padding: 6px 15px;
+        margin-top: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        border-bottom: none;
+        font-size: 13px;
+        border: medium none;
+    }
+
+    a.btn:hover, button, input[type="submit"]:hover {
+        background: #d80000;
+        color: #fff;
+    }
+
+    label.error{
+        color: #ff4a4a;
+        font-style: italic;
+    }
+
+    .checkbox {
+        width: inherit;
+    }
+}
+
+.form h5{
+    padding: 7px 0 5px 0;
+}
+
+.form label.input{
+    display: block;
+    color: $light-grey;
+    font-size: 11px;
+    margin-top: 8px;
+    margin-bottom: 3px;
+}
+
+.form label.error{
+     margin-top: 2px;
+     display: block;
+     font-size: 11px;
+}
+
+.form input[type="text"], form input[type="email"], form textarea {
+    border: 1px solid $light-grey;
+    color: $font-color;
+    font-size: 12px;
+    height: 34px;
+}
+
+.form input{
+    width: 200px;
+}
+
+.form textarea{
+    height: 130px;
+    width: 100%;
+}
+
+.form .message-to{
+    display: none;
+}
+
+.form p.message{
+    display: block;
+    font-size: 11px;
+    margin: 0;
+    padding: 9px;
+    font-size: 11px;
+    background-color: #ecf9d0;
+}
+
+.form p.message.bad {
+    background-color: #f9d0d0;
+}
+
+.form .mandatory{
+    font-size: 11px;
+}
+
+/* GENERAL
+-------------------------------------------- */
+/* page-header */
+.page-header {
+    background: $dark-grey;
+    padding-bottom: 20px !important;
+    color: #fff;
+    .person-name{
+        font-style: italic;
+    }
+    .title {
+        font-family: 'Open Sans', sans-serif;
+        color: #fff;
+    }
+    .title-2{
+        border-top: 1px solid #4C4C4C;
+        border-bottom: 1px solid #4C4C4C;
+        padding: 4px 0;
+        display: inline-block;
+        margin-top: 10px;
+        text-transform: none;
+        color: $light-grey;
+        font-size: 11px;
+        line-height: 13px;
+    }
+    a {
+        color: $light-grey;
+    }
+}
+
+/* page-navigation */
+.page-navigation{
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 40px;
+}
+
+.page-navigation a{
+    float:left;
+    margin-left: 1px;
+}
+
+.btn-close, .fancybox-close{
+    @include common-sprite(btn-close, $offset-x:8px, $offset-y:8px);
+    @include hide-text;
+    background-color: $dark-green;
+    width: 27px;
+    height: 27px;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.btn-prev, .fancybox-prev span{
+    @include common-sprite(btn-prev, $offset-x:8px, $offset-y:8px);
+    @include hide-text;
+    background-color: $dark-green;
+    width: 27px;
+    height: 27px;
+    display: block;
+}
+
+.btn-next, .fancybox-next span{
+    @include common-sprite(btn-next, $offset-x:12px, $offset-y:8px);
+    @include hide-text;
+    background-color: $dark-green;
+    width: 27px;
+    height: 27px;
+    display: block;
+}
+
+.btn-all{
+    @include common-sprite(btn-all, $offset-x:8px, $offset-y:8px);
+    @include hide-text;
+    background-color: $dark-green;
+    width: 27px;
+    height: 27px;
+    display: block;
+}
+
+/* other */
+.red{
+    color: #ff4a4a;
+}
+
+.white-bg{
+    background: #fff;
+}
+
+/* scrollpane */
+.scroll-pane {
+    overflow: hidden;
+    min-height: 255px;
+    width: 100%;
+    .images-bg {
+        background: $images-bg;
+        width: 100%;
+        height: 240px;
+    }
+    .images {
+        white-space: nowrap;
+    }
+    .image {
+        text-decoration: none;
+        display: inline-block;
+    }
+    .image img {
+        @include hide-text;
+    }
+    a{
+        text-decoration: none !important;
+    }
+    .animation-container {
+        position: relative;
+    }
+    .images-container {
+        position: absolute;
+        top: 0;
+    }
+    .jspHorizontalBar{
+        height: 8px !important;
+        padding: 3px 0 3px 0;
+        background: #f8f8f8;
+    }
+
+    .jspDrag{
+        background: #c2c2c2 !important;
+    }
+
+    .jspTrack{
+        background: #fff !important;
+    }
+}
+
+/* RESPONSIVE
+-------------------------------------------- */
+.navigation-responsive {
+   position: absolute;
+   top: 0;
+   right: 0;
+   display:none;
+   font-size: 12px !important;
+   float: right;
+}
+
+.mobile-contact {
+    position: absolute;
+    border-bottom: 0;
+    left: 0;
+    text-align: center;
+    color: #666;
+    font-size: 11px;
+    line-height: 16px;
+    font-family: 'Open Sans',sans-serif;
+    display: none;
+    width: 100%;
+    padding: 10px 0;
+    a {
+        padding: 0 10px;
+        color: #666;
+        text-decoration: underline;
+    }
+}
+
+/* MEDIA QUERIES
+-------------------------------------------- */
+@media all and (max-width: 640px) {
+    .sidebar{
+         position: absolute;
+         width: 100%;
+         height: 100px;
+        .navigation-bottom{
+            display: none;
+        }
+        .bottom-deco{
+            display: none;
+        }
+        .top-deco{
+            @include common-sprite(bg-pixels-small);
+            background-repeat: repeat-x;
+            width: 100%;
+            height: 10px;
+        }
+        .about{
+            position: relative;
+            margin: 20px 15px 0 15px;
+            padding: 0 0 5px 0;
+            img{
+                display: none;
+            }
+        }
+        .desc{
+            float:left;
+            padding: 0;
+        }
+    }
+    
+    .navigation-responsive{
+         display:block;
+    }
+    
+    .navigation-main{
+        margin-top: 5px;
+    }
+
+    .navigation-main ul{
+        display: none;
+    }
+    
+    .layout{
+        width: 100%;
+        z-index: 1;
+        margin: 100px 0 0 0;
+    }
+    
+    .projects-page--projects {
+        min-width: inherit;
+    }
+    
+    .content{
+        padding: 15px 15px 0;
+    }
+    
+    .page-navigation{
+        top:-28px;
+    }
+    
+    .btn-close{
+        top: -28px;
+    }
+
+    .mobile-contact {
+        display: block;
+    }
+}
+
+@media all and (max-width: 1000px) {
+    .header{
+        display:none
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* TAGS */
+.attribute-box.tags {
+    padding: 0;
+    .title {
+        padding: 0 0 8px;
+    }
+    .list {
+        list-style: none;
+    }
+    .list-item {
+        display: inline;
+        a {
+            color: #fff !important;
+        }
+    }
+    .tag {
+        @include common-sprite(tag-arrow, $offset-x: 100%, $offset-y: 0);
+        display: inline-block;
+        height: 21px;
+        margin-right: 12px;
+        padding-right: 22px;
+        margin-bottom: 9px;
+        font-size: 11px;
+    }
+    .tag-inner {
+        background-color: $light-green;
+        color: #FFFFFF;
+        display: block;
+        height: 17px;
+        padding: 4px 5px 0;
+    }
+}
+
+.attribute-box.social {
+    .title {
+        padding-bottom: 8px;
+    }
+    .actions {
+        @include clearfix;
+        & > * {
+            display: inline-block;
+            float: left;
+            margin-right: 5px;
+        }
+    }
+    .icon {
+        width: 27px;
+        height: 27px;
+        text-indent: -9999px;
+        cursor: pointer;
+    }
+    .icon-fb {
+        @include common-sprite(icon-fb);
+    }
+
+    .icon-ilike {
+        @include common-sprite(icon-ilike);
+    }
+    .counter-result {
+        @include common-sprite(counter-box-left);
+        height: 21px;
+        padding-left: 4px;
+        margin-top: 3px;
+    }
+    .counter-result span {
+        border: 1px solid $light-grey;
+        border-left: none;
+        height: 16px;
+        font-size: 11px;
+        margin: 0;
+        padding: 4px 11px 0 10px;
+        display: block;
+    }
+}
+
+.attribute-box.projects {
+    .list {
+        font-size: 11px;
+        line-height: 14px;
+    }
+}
+

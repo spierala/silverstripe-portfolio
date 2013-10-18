@@ -1,0 +1,17 @@
+Page:
+  #emails are sent via smtp server which makes sure the mails arrive (using phpmailer)
+  host: 'your_email_host'
+  port: 25
+  username: 'your_email_username'
+  password: 'your_email_password'
+CommentForm:
+  #mails sent to you via the comment form (BlogEntry) will use this data
+  to: 'email to'
+  from: 'email from'
+  from_name: 'email from name'
+  subject: 'email subject'
+MapPage:
+  #provide here a valid google maps api key link
+  key: 'https://maps.googleapis.com/maps/api/js?key=XYZ'
+SSViewer:
+  theme: 'portfolio'
