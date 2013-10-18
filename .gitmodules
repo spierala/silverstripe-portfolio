@@ -4,3 +4,6 @@
 [submodule "widgets"]
 	path = widgets
 	url = https://github.com/silverstripe/silverstripe-widgets.git
+[submodule "staticpublisher"]
+	path = staticpublisher
+	url = https://github.com/silverstripe-labs/silverstripe-staticpublisher.git
