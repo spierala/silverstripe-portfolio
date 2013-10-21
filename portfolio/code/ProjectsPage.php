@@ -11,6 +11,10 @@ class ProjectsPage extends Page {
     public function getCMSFields() {
         $fields = parent::getCMSFields();
         $fields->removeFieldFromTab('Root.Main', 'ShowSocial');
+        $fields->removeFieldFromTab('Root.Main', 'Location');
+        $fields->removeFieldFromTab('Root.Main', 'Subtitle');
+        $fields->removeFieldFromTab('Root.Main', 'Date');
+        $fields->removeFieldFromTab('Root.Main', 'ImageFolderID');
         return $fields;
     }
 
