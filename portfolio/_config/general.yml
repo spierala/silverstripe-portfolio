@@ -15,3 +15,5 @@ MapPage:
   key: 'https://maps.googleapis.com/maps/api/js?key=XYZ'
 SSViewer:
   theme: 'portfolio'
+GDBackend:
+  default_quality: 85
