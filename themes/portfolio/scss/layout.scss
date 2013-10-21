@@ -6,6 +6,7 @@ $common-position: 100%;
 @import "compass/typography/text/replacement";
 @import "compass/css3/opacity";
 @import "compass/utilities/general/clearfix";
+@import "compass/css3/box-sizing";
 
 @import "sprite/common/*.png";
 
@@ -288,12 +289,14 @@ body{
         position: relative;
     }
     .project-preview-text {
+        @include box-sizing(border-box);
         background: $dark-grey;
         position: absolute;
         bottom: 0;
         left: 0;
         z-index: -1;
         border: 1px solid #4C4C4C;
+        width: 100%;
     }
     .project-title {
         text-align: center;
@@ -306,6 +309,7 @@ body{
         padding: 10px 20px 15px 20px;
         font-size: 11px;
         font-family: 'Open Sans', sans-serif;
+        display: block;
     }
 }
 
