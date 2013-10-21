@@ -1,5 +1,5 @@
 <?php
-class BlogEntries extends Page {
+class BlogEntries extends BasicPage {
     private static $allowed_children = array("BlogEntry");
     private static $description = 'Holder for BlogEntry - Pages';
 

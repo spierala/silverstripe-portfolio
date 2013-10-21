@@ -1,9 +1,5 @@
 <?php
-class BlogEntry extends Page { 
-     static $db = array(
-        'Excerpt' => 'Text'
-	);
-     
+class BlogEntry extends ArticlePage {
     static $has_many = array(
         'Comments' => 'Comment'
     );
@@ -30,22 +26,12 @@ class BlogEntry extends Page {
             GridFieldConfig_RelationEditor::create()
         );            
         $fields->addFieldToTab('Root.Tags', $tagsField);
-        
-//        $commentsField = new GridField(
-//            'Comments',
-//            'Comments',
-//            $this->Comments(),
-//            GridFieldConfig_RelationEditor::create()
-//        );            
-//        $fields->addFieldToTab('Root.Comments', $commentsField);
-        
-        $fields->addFieldToTab('Root.Main', new TextareaField('Excerpt'), 'Content');
                 
         return $fields;
     }
 }
 
-class BlogEntry_Controller extends Page_Controller {
+class BlogEntry_Controller extends ArticlePage_Controller {
     public static $allowed_actions = array('CommentForm' => true);
 
     public function CommentForm(){

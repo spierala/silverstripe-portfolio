@@ -1,7 +1,6 @@
 <?php
-class ProjectPage extends Page { 
+class ProjectPage extends ArticlePage {
     static $db = array(
-        'Excerpt' => 'Text',
         'FirstImageIsPreview' => 'Boolean'
 	);
     static $has_many = array(
@@ -37,12 +36,6 @@ class ProjectPage extends Page {
             GridFieldConfig_RelationEditor::create()
         ); 
         $fields->addFieldToTab('Root.ProjectAttributes', $attributesField);
-        $dateField = new DateField('Date');
-        $dateField->setConfig('showcalendar', true);
-        $dateField->setConfig('dateformat', 'dd.MM.YYYY');
-        $fields->addFieldToTab('Root.Main', new TextareaField('Excerpt'), 'Content');
-        $fields->addFieldToTab('Root.Main', new TextField('Location'), 'Content');
-        $fields->addFieldToTab('Root.Main', $dateField, 'Content');
 
         $firstImageField = new CheckboxField('FirstImageIsPreview', 'Ignore First Image of Image Folder');
         $fields->addFieldToTab('Root.Main', $firstImageField, 'ImageFolderID');
