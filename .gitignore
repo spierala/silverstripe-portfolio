@@ -4,3 +4,5 @@
 .sass-cache/
 /silverstripe-cache/
 log/
+_ss_environment.php
+assets

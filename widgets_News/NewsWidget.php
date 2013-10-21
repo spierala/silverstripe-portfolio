@@ -1,23 +1,12 @@
 <?php
 
-class NewsWidget extends GeneralWidget {
+class NewsWidget extends WidgetBase {
     static $cmsTitle = 'News';
-    static $description = 'Display News which are created in PortfolioModelAdmin with ShowInHeader activated';
-
-    public function Content() {
-        return null;
-    }
+    static $description = 'Display News created in ModelAdmin with ShowInWidget activated';
 
     public function getNews(){
         $news = News::get()->filter(array('ShowInWidget' => 1));
         return $news;
-    }
-
-    public function getCMSFields() {
-        return new FieldList(
-            new TextField('Title'),
-            new TextField('CssClass')
-        );
     }
 }
 

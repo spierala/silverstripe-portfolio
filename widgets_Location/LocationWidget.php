@@ -1,22 +1,29 @@
 <?php
 
-class LocationWidget extends GeneralWidget {
+class LocationWidget extends WidgetBase {
     static $cmsTitle = 'Location';
     static $description = 'Display Location (set in Settings)';
 
+    static $has_one = array(
+        'Location' => 'Location'
+    );
+
     public function getCMSFields() {
-        return new FieldList(
-            new TextField('Title'),
-            new TextField('CssClass')
-        );
+        $locationDropDown = new DropdownField('LocationID', 'Choose Location', $this->getLocationOptions());
+        $locationDropDown->setEmptyString('(Select Location)');
+        $locationDropDown->setDescription('Create new Locations in Model Admin');
+
+        $fields = parent::getCMSFields();
+        $fields->push($locationDropDown);
+        return $fields;
     }
 
-    public function getLocation(){
-        return SiteConfig::current_site_config()->Location;
-    }
-
-    public function getLocationLabel(){
-        return SiteConfig::current_site_config()->LocationLabel;
+    private function getLocationOptions() {
+        if($Pages = DataObject::get('Location')) {
+            return $Pages->map('ID', 'Title', 'Please Select');
+        } else {
+            return array('No Objects found');
+        }
     }
 }
 

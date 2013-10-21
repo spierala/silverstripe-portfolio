@@ -8,3 +8,4 @@ Director:
     'blog-category/$Slug': 'BlogCategory_Controller'
     'tag/ilike/$Slug': 'Tag_Controller'
     'tag/$Slug': 'Tag_Controller'
+    'location/$Slug': 'Location_Controller'

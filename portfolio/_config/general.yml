@@ -10,7 +10,7 @@ CommentForm:
   from: 'email from'
   from_name: 'email from name'
   subject: 'email subject'
-MapPage:
+Location_Controller:
   #provide here a valid google maps api key link
   key: 'https://maps.googleapis.com/maps/api/js?key=XYZ'
 SSViewer:
