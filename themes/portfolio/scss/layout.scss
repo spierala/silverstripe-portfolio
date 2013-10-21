@@ -123,10 +123,10 @@ body{
         top: 0;
         left: 30px;
         background: $dark-green;
-        &.available {
+        &.color-1 {
             background: $light-green;
         }
-        &.action {
+        &.color-2 {
             background: $medium-green;
         }
     }

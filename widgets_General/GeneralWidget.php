@@ -2,16 +2,17 @@
 
 class GeneralWidget extends Widget {
     static $db = array(
-        "Title" => "Varchar",
-        "LinkLabel" => "Varchar"
+        'Title' => 'Varchar',
+        'LinkLabel' => 'Varchar',
+        'CssClass' => 'Varchar' 
     );
 
     static $has_one = array(
         'SiteTree' => 'SiteTree'
     );
 
-    static $cmsTitle = "General";
-    static $description = "General Widget to display a Title and an internal Link";
+    static $cmsTitle = 'General';
+    static $description = 'General Widget to display a Title and an internal Link';
     
     public function getCustomTitle(){
     	return $this->Title;
@@ -25,8 +26,9 @@ class GeneralWidget extends Widget {
         $pageDropDown = new DropdownField('SiteTreeID', 'LinkedPage', SiteTree::get()->sort('Title')->map('ID', 'Title'));
         $pageDropDown->setEmptyString('(Select Page)');
         return new FieldList(
-            new TextField("Title", "Title"),
-            new TextField("LinkLabel", "LinkLabel"),
+            new TextField('Title'),
+            new TextField('LinkLabel'),
+            new TextField('CssClass', 'Icon Css Class'),
             $pageDropDown
         );
     }
