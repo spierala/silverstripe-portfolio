@@ -12,5 +12,3 @@ i18n::set_locale('en_US');
 Object::add_extension('SiteConfig', 'CustomSiteConfig');
 
 Object::add_extension("SiteTree", "FilesystemPublisher('cache/', 'html')");
-
-Object::useCustomClass('Member', 'CustomMember');

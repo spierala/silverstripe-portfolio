@@ -17,3 +17,6 @@ SSViewer:
   theme: 'portfolio'
 GDBackend:
   default_quality: 85
+Member:
+  extensions:
+    - CustomMemberExtension
