@@ -16,9 +16,9 @@ class Page extends BasicPage {
     
     public function getCMSFields() {
         $fields = parent::getCMSFields();
-
-        $socialField = new CheckboxField('ShowSocial', 'Activate Social (Facebook sharing, interal iLike Counter)');
+        $socialField = new CheckboxField('ShowSocial', 'Show Social Box (Facebook sharing, internal iLike Counter)');
         $fields->addFieldToTab('Root.Main', $socialField, 'Content');
+        $fields->addFieldToTab('Root.Main', new TextField('ILikeCountCount', 'ILikeCount', $this->ILikeCount()->Count), 'Content');
         $fields->addFieldToTab('Root.Main', new TreeDropdownField('ImageFolderID', 'Choose Image Folder', 'Folder'), 'Content');
         return $fields;
     }
@@ -84,17 +84,22 @@ class Page extends BasicPage {
         return -1;
     }
 
-    //create an ilike counter after publishing page
-    public function onAfterPublish() {
-        if($this->ShowSocial == 1){
-            if($this->ILikeCount()!=null){
-                $ilikeCount = new ILikeCount();
-                $ilikeCount->write();
-                $this->ILikeCountID = $ilikeCount->ID;
-                $this->writeToStage('Stage');
-                $this->publish('Stage', 'Live');
-            }
+    public function onBeforeWrite() {
+        //create iLike Counter if it does not yet exist
+        if(!$this->ILikeCountID) {
+            $ILikeCount = ILikeCount::create();
+            $ILikeCount->Count = $this->ILikeCountCount;
+            $ILikeCount->write();
+            $this->ILikeCountID = $ILikeCount->ID;
         }
+        //edit iLine Counter Count directly via TextField
+        if($this->ILikeCountCount) {
+            // update existing relation
+            $ILikeCount = $this->ILikeCount();
+            $ILikeCount->Count = $this->ILikeCountCount;
+            $ILikeCount->write();
+        }
+        parent::onBeforeWrite();
     }
 }
 
@@ -105,7 +110,7 @@ class Page_Controller extends BasicPage_Controller {
     //Counter
     public function ilike($arguments = null) {
 		$this->countUp();
-        $this->republish($this->Link()); //trigger cache update //TODO: is this good?
+        $this->republish($this->Link()); //trigger cache update //TODO: better use staticpublishqueue
 		if($this->request->isAjax()) {
 			return $this->getCount();
 		}
