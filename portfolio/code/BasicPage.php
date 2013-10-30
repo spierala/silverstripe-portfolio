@@ -57,6 +57,13 @@ class BasicPage extends SiteTree {
         foreach($tags as $tag) {
             array_push($urls, '/tag/'.$tag->Slug);
         }
+
+        //add location pages
+        $locations = Location::get();
+        foreach($locations as $location) {
+            array_push($urls, '/location/'.$location->Slug);
+        }
+
         return $urls;
     }
 
