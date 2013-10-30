@@ -89,14 +89,6 @@ class BasicPage extends SiteTree {
     public function getCurrentYear() {
         return date("Y");
     }
-
-    public function testAjax(){
-        if (Director::is_ajax()) {
-            return 1;
-        }else {
-            return 0;
-        }
-    }
 }
 
 class BasicPage_Controller extends ContentController {

@@ -1,4 +1,5 @@
 <?php
+/*Article Page is rendered with Layout/Page.ss*/
 class ArticlePage extends Page {
     private static $db = array(
         'Subtitle' => 'Varchar(255)',

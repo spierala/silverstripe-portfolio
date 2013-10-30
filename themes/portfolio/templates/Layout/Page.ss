@@ -1,4 +1,3 @@
-<% require javascript("themes/portfolio/javascript/spierala.page.js") %>
 <div class="page content-container white-bg">
     <article>
         <% include PageHeader %>

@@ -28,8 +28,7 @@
             project.categories = $(this).data('categories');
             projectDataArray.push(project);
             $(this).find('.project-preview-text').css("visibility", "hidden");
-        });   
-        //$projectContainer.hide();
+        });
         
         initIdArray = getIdArray(); //for reset
         
@@ -53,21 +52,13 @@
                 $.address.title(projectTitle + " " + pageTitle);
                 loadProject($project);
             }
-        });  
-        
-        //set the category "all" on app start,  
-//        $.address.externalChange(function(event){
-//            if(!event.parameters.category){
-//                $.address.value("?category=all");
-//            }
-//        });  
+        });
     }
     
     function initListeners(){                    
         $(window).resize(function() {
             if(this.resizeTO) {
-                clearTimeout(this.resizeTO);  
-               // resizeIsotope();
+                clearTimeout(this.resizeTO);
             }
             this.resizeTO = setTimeout(function() {
                 resizeReadyIsotope();
@@ -117,7 +108,7 @@
         loadProject($project);
     }
     
-    //AJAX STUFF
+    //AJAX
     function loadProject($project){
         var pageID = $project.data("pageid");
         if(currentPageID!=pageID){
@@ -151,7 +142,7 @@
                 }
                 $imagesContainer.css(cssObj); 
                 $imagesContainer.animate({left: 0}, 500, function(){
-                    ProjectPage.initProjectPage();
+                    ScrollMedia.init();
                 });
             }
             imagesLoaded++;

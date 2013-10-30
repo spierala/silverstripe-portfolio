@@ -1,11 +1,12 @@
-var ProjectPage = {
+var ScrollMedia = {
     scrollPaneApi: null,
-    initProjectPage: function(){
+    init: function() {
+        //init scrollpane
         var pane =  $('.scroll-pane').jScrollPane();
         pane.jScrollPane();
-        ProjectPage.scrollPaneApi = pane.data('jsp');   
-        $(".fancybox").fancybox({padding: 0});
-        
+        ScrollMedia.scrollPaneApi = pane.data('jsp');
+
+        //handle scrollpane resizing
         $(window).bind(
             'resize',
             function(){
@@ -18,16 +19,19 @@ var ProjectPage = {
                         throttleTimeout = setTimeout(
                             function()
                             {
-                                ProjectPage.scrollPaneApi.reinitialise();
+                                ScrollMedia.scrollPaneApi.reinitialise();
                                 throttleTimeout = null;
                             },
                             50
                         );
                     }
                 } else {
-                    ProjectPage.scrollPaneApi.reinitialise();
+                    ScrollMedia.scrollPaneApi.reinitialise();
                 }
             }
-        )
+        );
+
+        // init fancybox
+        $(".fancybox").fancybox({padding: 0});
     }
 }

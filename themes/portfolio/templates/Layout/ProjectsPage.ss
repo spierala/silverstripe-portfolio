@@ -1,7 +1,6 @@
 <% require javascript("themes/portfolio/javascript/lib/jquery.address-1.4.min.js") %>
 <% require javascript("themes/portfolio/javascript/spierala.isotope.js") %>
 <% require javascript("themes/portfolio/javascript/spierala.projectspage.js") %>
-<% require javascript("themes/portfolio/javascript/spierala.projectpage.js") %>
 
 <h1 class="projects-page--title">$Title</h1>
 <div id="projects-page--ajax"></div>

@@ -1,14 +1,3 @@
-<% require javascript("themes/portfolio/javascript/spierala.projectpage.js") %>
-
-<% if $testAjax = 0 && FolderImages %>
-<script type="text/javascript">
-    //if page is called without ajax then call the initProjectPage manually, which is normally done by projectspage.js
-    $(window).load(function(){
-        ProjectPage.initProjectPage();
-    });
-</script>
-<% end_if %>
-
 <div class="project-page content-container">
     <article>
         <% include PageHeader %>

@@ -24,15 +24,23 @@
                     document.location.href = $(this).find('option:selected').data('href');
                 });
             });
-        </script>
 
-        <% require themedCSS("layout") %>
-        <% require themedCSS("typography") %>
+            <% if FolderImages %>
+                $(window).load(function(){
+                    ScrollMedia.init();
+                });
+            <% end_if %>
+        </script>
 
         <% require css("themes/portfolio/javascript/lib/fancybox/jquery.fancybox.css") %>
         <% require css("themes/portfolio/javascript/lib/jScrollPane/jquery.jscrollpane.css") %>
         <% require javascript("themes/portfolio/javascript/lib/jScrollPane/jquery.jscrollpane.min.js") %>
         <% require javascript("themes/portfolio/javascript/lib/fancybox/jquery.fancybox.pack.js") %>
+
+        <% require javascript("themes/portfolio/javascript/spierala.scrollmedia.js") %>
+
+        <% require themedCSS("layout") %>
+        <% require themedCSS("typography") %>
     </head>
     <body class="$ClassName">
         <div class="main">
