@@ -1,7 +1,7 @@
 <div class="page content-container white-bg">
     <article>
         <% include PageHeader %>
-        <% include ImageScrollPane %>
+        <% include ScrollMedia %>
         <div class="typography content left-col">
             $Content
         </div>

@@ -5,7 +5,7 @@
 <div class="blogentry-page content-container white-bg">
     <article>
         <% include PageHeader %>
-        <% include ImageScrollPane %>
+        <% include ScrollMedia %>
         <div class="left-col content typography">
             $Content
             <div class="comments form">

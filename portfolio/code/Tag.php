@@ -21,11 +21,13 @@ class Tag extends DataObject {
         'BlogEntries' => 'BlogEntry'
     );
 
-    public function onBeforeWrite(){
-        if($this->ILikeCount()!=null){
-            $ilikeCount = new ILikeCount();
-            $ilikeCount->write();
-            $this->ILikeCountID = $ilikeCount->ID;
+    public function onBeforeWrite() {
+        if($this->HasTagPage) { //create ILike Count only if HasTagPage is true
+            if(!$this->ILikeCountID) {
+                $ilikeCount = new ILikeCount();
+                $ilikeCount->write();
+                $this->ILikeCountID = $ilikeCount->ID;
+            }
         }
         parent::onBeforeWrite();
     }
@@ -34,8 +36,7 @@ class Tag extends DataObject {
         $fields = parent::getCMSFields();
         $fields->removeFieldFromTab('Root.Main', 'ILikeCountID');
 
-        $tagpage = new CheckboxField('HasTagPage');
-        $tagpage->setDescription('Generate Link to related Tag Page');
+        $tagpage = new CheckboxField('HasTagPage', 'Tag has Link to Tag Page (slug needed)');
         $fields->addFieldToTab('Root.Main', $tagpage);
         return $fields;
     }
