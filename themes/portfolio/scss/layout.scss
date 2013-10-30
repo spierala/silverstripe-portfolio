@@ -422,7 +422,7 @@ body{
 
 /* FORM
 -------------------------------------------- */
-.form{
+.form {
     a.btn, button, input[type="submit"] {
         background: #4FAC41 !important;
         color: #fff !important;
@@ -434,6 +434,7 @@ body{
         border-bottom: none;
         font-size: 13px;
         border: medium none;
+        cursor: pointer;
     }
 
     a.btn:hover, button, input[type="submit"]:hover {
@@ -613,6 +614,7 @@ body{
     .image {
         text-decoration: none;
         display: inline-block;
+        margin-right: 3px;
     }
     .image img {
         @include hide-text;

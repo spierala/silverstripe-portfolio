@@ -6,9 +6,6 @@ $("#CommentForm_CommentForm").validate({
             required: true,
             email: true
         }
-    },
-    messages:{
-        'Comment' :  "Bitte hinterlassen Sie eine Nachricht."
     }
 });
 

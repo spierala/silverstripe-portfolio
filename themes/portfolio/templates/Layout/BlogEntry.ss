@@ -1,5 +1,4 @@
 <% require javascript("themes/portfolio/javascript/lib/validate/jquery.validate.min.js") %>
-<% require javascript("themes/portfolio/javascript/lib/validate/jquery.validate.messages_de.js") %>
 <% require javascript("themes/portfolio/javascript/BlogEntry.js") %>
 
 <% cached 'database', LastEdited %>
