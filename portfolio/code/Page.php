@@ -117,17 +117,17 @@ class Page_Controller extends BasicPage_Controller {
 	}
 
     //send mail via phpmailer
-    public function sendCMSMail($to, $from, $from_name, $subject, $body) { 
+    public function sendCMSMail($to, $from, $from_name, $subject, $body) {
         global $error;
         $mail = new PHPMailer();  // create a new object
         $mail->CharSet  =  'utf-8'; //UTF-8 Kodierung festlegen
         $mail->IsSMTP(); // enable SMTP
         $mail->SMTPDebug = 0;  // debugging: 1 = errors and messages, 2 = messages only
         $mail->SMTPAuth = true;  // authentication enabled
-        $mail->Host = $this->config()->host;
-        $mail->Port = $this->config()->port;
-        $mail->Username = $this->config()->username;
-        $mail->Password = $this->config()->password;
+        $mail->Host = Page::config()->host;
+        $mail->Port = Page::config()->port;
+        $mail->Username = Page::config()->username;
+        $mail->Password = Page::config()->password;
         $mail->SetFrom($from, $from_name);
         $mail->Subject = $subject;
         $mail->IsHTML(true);
