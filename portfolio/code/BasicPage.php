@@ -51,6 +51,12 @@ class BasicPage extends SiteTree {
                 array_push($urls, $page->Link().'ajax');
             }
         }
+
+        //add tag pages
+        $tags = Tag::get()->filter(array('HasTagPage' => 1));
+        foreach($tags as $tag) {
+            array_push($urls, '/tag/'.$tag->Slug);
+        }
         return $urls;
     }
 
