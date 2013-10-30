@@ -7,7 +7,7 @@
                 <h5>Related Links:</h5>
                 <ul class="tag-links">
                     <% loop Links %>
-                        <li class="tag-link"><a target="_blank" title="Gehe zu $Name" href="$URL">$Name</a></li>
+                        <li class="tag-link"><a target="_blank" title="Go to $Name" href="$URL">$Name</a></li>
                     <% end_loop %>
                 </ul>
             <% end_if %>
@@ -18,7 +18,7 @@
             <h5 class="title">$Title Projects:</h5>
             <ul class="list">
                 <% loop ProjectPages %>
-                <li class="list-item"><a href="$Link" title="Zeige Projekt: $Title">$Title</a></li>
+                <li class="list-item"><a href="$Link" title="Show Project: $Title">$Title</a></li>
                 <% end_loop %>
             </ul>
         </div>

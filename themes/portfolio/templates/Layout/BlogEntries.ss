@@ -17,7 +17,7 @@
                     <% else %>
                         $Content.LimitWordCount(20)
                     <% end_if %>
-                    <a href="$Link" title="$title">Zum Artikel</a>      
+                    <a href="$Link" title="$title">Read more...</a>
                 </p>
             </article>            
         <% end_loop %>
