@@ -52,6 +52,15 @@ a:hover {
     strong {
         font-weight: bold;
     }
+    ul {
+        margin-bottom: 10px;
+        margin-left: 15px;
+        padding: 5px 0 5px 0;
+        list-style: disc;
+    }
+    li {
+        line-height: 21px;
+    }
 }
 
 /* WYSIWYG EDITOR ALIGNMENT CLASSES
