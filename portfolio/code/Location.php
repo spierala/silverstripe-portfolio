@@ -4,7 +4,7 @@ class Location extends DataObject {
         'Name' => 'Varchar(100)',
         'Subtitle' => 'Varchar(100)',
         'Slug' => 'Varchar(50)',
-        'Latitude' => 'Decimal(20,16)',
-        'Longitude' => 'Decimal(20,16)'
+        'Latitude' => 'Varchar(10)',
+        'Longitude' => 'Varchar(10)'
     );
 }
