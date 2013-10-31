@@ -5,12 +5,20 @@
                 $SiteConfig.TitleImage.SetWidth(88)
             </a>
             <h3 class="tagline">$SiteConfig.Tagline.RAW</h3>
-            <select class="navigation-responsive">
+            <!--<select class="navigation-responsive">
                 <option data-href="#" selected="">Site Navigation</option>
                 <% loop Menu(1) %>
                 <option data-href="$Link">$MenuTitle.XML</option>
                 <% end_loop %>
-            </select>
+            </select>-->
+            <a href="#navMain" class="mobile-nav-open"></a>
+            <nav class="mobile-nav">
+                <ul id="navMain">
+                    <% loop $Menu(1) %>
+                    <li class="list-item $LinkingMode"><a href="$Link">$MenuTitle</a></li>
+                    <% end_loop %>
+                </ul>
+            </nav>
         </div>
         <nav class="navigation-main">
             <ul>

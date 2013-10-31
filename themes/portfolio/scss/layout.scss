@@ -13,7 +13,9 @@ $common-position: 100%;
 body{
     background: $light-grey-bg;
     height: 100%;
-    overflow-x: hidden;
+    overflow-x:hidden;
+    position:absolute;
+    width:100%;
 }
 
 /* GENERAL
@@ -648,123 +650,6 @@ body{
     }
 }
 
-/* RESPONSIVE
--------------------------------------------- */
-.navigation-responsive {
-   position: absolute;
-   top: 0;
-   right: 0;
-   display:none;
-   font-size: 12px !important;
-   float: right;
-}
-
-.mobile-contact {
-    position: absolute;
-    border-bottom: 0;
-    left: 0;
-    text-align: center;
-    color: #666;
-    font-size: 11px;
-    line-height: 16px;
-    font-family: 'Open Sans',sans-serif;
-    display: none;
-    width: 100%;
-    padding: 10px 0;
-    a {
-        padding: 0 10px;
-        color: #666;
-        text-decoration: underline;
-    }
-}
-
-/* MEDIA QUERIES
--------------------------------------------- */
-@media all and (max-width: 640px) {
-    .sidebar{
-         position: absolute;
-         width: 100%;
-         height: 100px;
-        .navigation-bottom{
-            display: none;
-        }
-        .bottom-deco{
-            display: none;
-        }
-        .top-deco{
-            @include common-sprite(bg-pixels-small);
-            background-repeat: repeat-x;
-            width: 100%;
-            height: 10px;
-        }
-        .about{
-            position: relative;
-            margin: 20px 15px 0 15px;
-            padding: 0 0 5px 0;
-            img{
-                display: none;
-            }
-        }
-        .desc{
-            float:left;
-            padding: 0;
-        }
-    }
-    
-    .navigation-responsive{
-         display:block;
-    }
-    
-    .navigation-main{
-        margin-top: 5px;
-    }
-
-    .navigation-main ul{
-        display: none;
-    }
-    
-    .layout{
-        width: 100%;
-        z-index: 1;
-        margin: 100px 0 0 0;
-    }
-    
-    .projects-page--projects {
-        min-width: inherit;
-    }
-    
-    .content{
-        padding: 15px 15px 0;
-    }
-    
-    .page-navigation{
-        top:-28px;
-    }
-    
-    .btn-close{
-        top: -28px;
-    }
-
-    .mobile-contact {
-        display: block;
-    }
-}
-
-@media all and (max-width: 1000px) {
-    .header{
-        display:none
-    }
-}
-
-
-
-
-
-
-
-
-
-
 /* TAGS */
 .attribute-box.tags {
     padding: 0;
@@ -846,4 +731,152 @@ body{
         line-height: 14px;
     }
 }
+
+/* MEDIA QUERIES / RESPONSIVE
+-------------------------------------------- */
+.mobile-contact {
+    position: absolute;
+    border-bottom: 0;
+    left: 0;
+    text-align: center;
+    color: #666;
+    font-size: 11px;
+    line-height: 16px;
+    font-family: 'Open Sans',sans-serif;
+    display: none;
+    width: 100%;
+    padding: 10px 0;
+    a {
+        padding: 0 10px;
+        color: #666;
+        text-decoration: underline;
+    }
+}
+
+.mobile-nav {
+    display: none;
+}
+
+.mobile-nav-open {
+    @include common-sprite(mobile-menu);
+    width: 42px;
+    height: 28px;
+    color: #fff;
+    text-decoration: none;
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#pageslide {
+    display: none;
+    position: absolute;
+    position: fixed;
+    top: 0;
+    height: 100%;
+    z-index: 999999;
+    width: 200px;
+    padding: 20px;
+    background-color: #4F4F4F;
+    color: #FFF;
+}
+
+#pageslide li {
+    margin-bottom: 25px;
+}
+
+#pageslide ul li a {
+    font-family: 'Open Sans',sans-serif;
+    color: #FFF;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+@media all and (max-width: 640px) {
+    .mobile-nav-open {
+        display: block;
+    }
+
+    .sidebar{
+         position: absolute;
+         width: 100%;
+         height: 83px;
+        .navigation-bottom{
+            display: none;
+        }
+        .bottom-deco{
+            display: none;
+        }
+        .top-deco{
+            @include common-sprite(bg-pixels-small);
+            background-repeat: repeat-x;
+            width: 100%;
+            height: 10px;
+        }
+        .about{
+            position: relative;
+            margin: 20px 15px 0 15px;
+            padding: 0 0 5px 0;
+            border-bottom: none;
+            img{
+                height: 52px;
+            }
+        }
+        .desc{
+            float:left;
+            padding: 0;
+        }
+    }
+    
+    .navigation-main{
+        margin-top: 5px;
+    }
+
+    .navigation-main ul{
+        display: none;
+    }
+    
+    .layout{
+        width: 100%;
+        z-index: 1;
+        margin: 83px 0 0 0;
+    }
+    
+    .projects-page--projects {
+        min-width: inherit;
+    }
+    
+    .content{
+        padding: 15px 15px 0;
+    }
+    
+    .page-navigation{
+        top:-28px;
+    }
+    
+    .btn-close{
+        top: -28px;
+    }
+
+    .mobile-contact {
+        display: block;
+    }
+}
+
+@media all and (max-width: 1000px) {
+    .header{
+        display:none
+    }
+}
+
+
+
+
+
+
+
+
+
+
 

@@ -32,14 +32,13 @@
     initIsotope();
     updateProjectListeners();
 
-    
     function initDeepLinking() {
         var slug,
             name,
             pageid,
             projectTitle;
         $.address.change(function(event) {  
-            if(event.parameters.category){
+            if(event.parameters.category) {
                 closeProjectContainer();
                 slug = event.parameters.category;
                 updateCurrentSlug(slug);
@@ -114,7 +113,7 @@
         var pageID = $project.data("pageid"),
             absoluteLink = "",
             link = "";
-        if(currentPageID!=pageID){ //prevent loading same content again
+        if(currentPageID!=pageID) { //prevent loading same content again
             currentPageID = pageID;
             absoluteLink = $project.data("absolutelink");
             link = absoluteLink+"ajax";
@@ -180,9 +179,9 @@
     function updateCurrentSlug(slug) {
         currentSlug = slug;
         updateMenu();
-        if(slug=="all"){
+        if(slug=="all") {
             reset();
-        }else{
+        } else {
             filterProjectsByCategory();
             projectDataArray.sort(sortByCategory);
             updateIsotope();
@@ -197,7 +196,7 @@
             return -1;
         }
         function checkA() {
-            for(var i=0; i<a.categories.length; i++){
+            for(var i=0; i<a.categories.length; i++) {
                  var category = a.categories[i];
                  if(category == currentSlug){
                      return 1;
@@ -277,7 +276,6 @@
         isotope = new Isotope();
         isotope.updateIdArray(initIdArray);
         resizeIsotope();
-      //  resizeReadyIsotope();
     }
     
     function resetIsotope() {

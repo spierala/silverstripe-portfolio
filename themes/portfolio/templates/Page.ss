@@ -19,14 +19,13 @@
         <script type="text/javascript">
             var pageTitle = '$SiteConfig().Title';
 
-            $(document).ready(function(){
-                $('.navigation-responsive').bind('change', function(){
-                    document.location.href = $(this).find('option:selected').data('href');
-                });
+            $(document).ready(function() {
+                //pageslide
+                $(".mobile-nav-open").pageslide();
             });
 
             <% if FolderImages %>
-                $(window).load(function(){
+                $(window).load(function() {
                     ScrollMedia.init();
                 });
             <% end_if %>
@@ -36,6 +35,7 @@
         <% require css("themes/portfolio/javascript/lib/jScrollPane/jquery.jscrollpane.css") %>
         <% require javascript("themes/portfolio/javascript/lib/jScrollPane/jquery.jscrollpane.min.js") %>
         <% require javascript("themes/portfolio/javascript/lib/fancybox/jquery.fancybox.pack.js") %>
+        <% require javascript("themes/portfolio/javascript/lib/jquery.pageslide.min.js") %>
 
         <% require javascript("themes/portfolio/javascript/spierala.scrollmedia.js") %>
 
