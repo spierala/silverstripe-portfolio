@@ -27,7 +27,7 @@ Of course you can download everything manually as well. Keep in mind submodules 
 ## Configuration
 Edit this files to configure the website and the database connection:
 
-* **_ss_environment.php**  
+* **ss_environment.php**  
  enter your database connection   
  enter your admin username and password to be able to login to the 
  backend
