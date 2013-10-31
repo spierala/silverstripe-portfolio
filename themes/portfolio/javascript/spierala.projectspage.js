@@ -111,7 +111,7 @@
     //AJAX
     function loadProject($project){
         var pageID = $project.data("pageid");
-        if(currentPageID!=pageID){
+        if(currentPageID!=pageID){ //prevent loading same content again
             currentPageID = pageID;
             var absoluteLink = $project.data("absolutelink");
             var link = absoluteLink+"ajax";
@@ -152,7 +152,6 @@
     function initAjaxListeners(){
         $('a.btn-close, a.btn-all').click(function(e){
              closeProjectContainer();
-             currentPageID = 0;
              e.preventDefault();
         });
         $('a.btn-prev, a.btn-next').click(function(e){
@@ -297,7 +296,8 @@
     }
     
     //ANIMATION
-    function closeProjectContainer(){
+    function closeProjectContainer() {
+        currentPageID = 0; // reset to allow content load again
         window.scrollTo(0, 0);
         $projectContainer.slideUp(function(){
             projectContainerVisible = false;
