@@ -7,3 +7,9 @@
 [submodule "staticpublisher"]
 	path = staticpublisher
 	url = https://github.com/silverstripe-labs/silverstripe-staticpublisher.git
+[submodule "framework"]
+	path = framework
+	url = https://github.com/silverstripe/silverstripe-framework.git
+[submodule "cms"]
+	path = cms
+	url = https://github.com/silverstripe/silverstripe-cms.git
