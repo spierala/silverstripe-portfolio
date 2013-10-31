@@ -424,6 +424,7 @@ body{
 -------------------------------------------- */
 .form {
     a.btn, button, input[type="submit"] {
+        -webkit-appearance: none;
         background: #4FAC41 !important;
         color: #fff !important;
         display: inline-block;
@@ -435,6 +436,7 @@ body{
         font-size: 13px;
         border: medium none;
         cursor: pointer;
+        border-radius: 0;
     }
 
     a.btn:hover, button, input[type="submit"]:hover {
@@ -475,6 +477,8 @@ body{
     color: $font-color;
     font-size: 12px;
     height: 34px;
+    -webkit-appearance: none;
+    border-radius: 0;
 }
 
 .form input{
