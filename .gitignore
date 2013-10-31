@@ -6,4 +6,4 @@
 log/
 _ss_environment.php
 _resampled
-assets/error*
+assets/*
