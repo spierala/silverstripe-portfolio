@@ -1,4 +1,4 @@
-<% require javascript("themes/portfolio/javascript/lib/jquery.address-1.4.min.js") %>
+<% require javascript("themes/portfolio/javascript/lib/jquery.address-1.5.min.js") %>
 <% require javascript("themes/portfolio/javascript/spierala.isotope.js") %>
 <% require javascript("themes/portfolio/javascript/spierala.projectspage.js") %>
 
