@@ -29,6 +29,27 @@ class BlogEntry extends ArticlePage {
                 
         return $fields;
     }
+
+    //Override Pagers of Page.php
+    public function nextPager() {
+        $page = BlogEntry::get()->filter(
+            array(
+                'Date:LessThan' => $this->Date,
+                'ParentID' => $this->ParentID
+            )
+        )->sort('Date DESC')->First();
+        return $page;
+    }
+
+    public function previousPager() {
+        $page = BlogEntry::get()->filter(
+            array(
+                'Date:GreaterThan' => $this->Date,
+                'ParentID' => $this->ParentID
+            )
+        )->sort('Date')->First();
+        return $page;
+    }
 }
 
 class BlogEntry_Controller extends ArticlePage_Controller {

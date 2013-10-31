@@ -41,25 +41,26 @@ class Page extends BasicPage {
         }
         return $images;
     }
-    
+
     public function nextPager() {
-		$where = "ParentID = ($this->ParentID + 0) AND Sort > ($this->Sort + 0 )";
-		$pages = DataObject::get("SiteTree", $where, "Sort", "", 1);
-		if($pages) {
-			foreach($pages as $page) {
-				return $page;
-			}
-		}
-	}
-	public function previousPager() {
-		$where = "ParentID = ($this->ParentID + 0) AND Sort < ($this->Sort + 0)";
-		$pages = DataObject::get("SiteTree", $where, "Sort DESC", "", 1);
-		if($pages) {
-			foreach($pages as $page) {
-				return $page;
-			}
-		}
-	}
+        $page = SiteTree::get()->filter(
+            array(
+                'Sort:GreaterThan' => $this->Sort,
+                'ParentID' => $this->ParentID
+            )
+        )->sort('Sort ASC')->First();
+        return $page;
+    }
+
+    public function previousPager() {
+        $page = SiteTree::get()->filter(
+            array(
+                'Sort:LessThan' => $this->Sort,
+                'ParentID' => $this->ParentID
+            )
+        )->sort('Sort DESC')->First();
+        return $page;
+    }
 
     /* FB
     -------------------------------------------- */
