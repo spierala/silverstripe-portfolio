@@ -37,7 +37,7 @@ class Page extends BasicPage {
                 $templist->add($image);
             }
             $templist->shift();
-            return $images;
+            return $templist;
         }
         return $images;
     }
