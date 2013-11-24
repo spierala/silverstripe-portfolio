@@ -14,7 +14,7 @@ here you can see silverstripe-portfolio in action:
 ## Installation
 I recommend to use git clone in your console:
 
-`git clone git@github.com:spierala/silverstripe-portfolio.git`
+`git clone https://github.com/spierala/silverstripe-portfolio.git`
 
 To update the related silverstripe-modules (googlesitemaps etc.) you have to execute these commands:
 
