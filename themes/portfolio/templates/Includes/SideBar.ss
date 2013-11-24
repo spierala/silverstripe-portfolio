@@ -53,7 +53,7 @@
         </nav>
     </aside>
     <div class="top-deco">
-        <svg width="721" height="110" id="calendar-graph">
+        <svg width="263" height="110" id="calendar-graph">
             <g transform="translate(0, 0)">
                 $ActivityWeeks
             </g>
