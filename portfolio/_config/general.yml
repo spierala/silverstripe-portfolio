@@ -21,3 +21,5 @@ GDBackend:
 Member:
   extensions:
     - CustomMemberExtension
+StravaWebservice:
+  id: 123456

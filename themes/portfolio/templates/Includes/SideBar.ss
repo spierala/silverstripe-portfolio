@@ -52,6 +52,12 @@
             <% include FooterContent %>
         </nav>
     </aside>
-    <div class="top-deco"></div>
+    <div class="top-deco">
+        <svg width="721" height="110" id="calendar-graph">
+            <g transform="translate(0, 0)">
+                $ActivityWeeks
+            </g>
+        </svg>
+    </div>
     <div class="bottom-deco"></div>
 </div>

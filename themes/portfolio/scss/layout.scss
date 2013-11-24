@@ -72,7 +72,7 @@ body{
 }
 
 .layout {
-    margin-left: 280px;
+    margin-left: 273px;
 }
 
 .content-container {
@@ -138,7 +138,8 @@ body{
 -------------------------------------------- */
 .sidebar {
     .top-deco  {
-        @include common-sprite(bg-pixels-big);
+        /*@include common-sprite(bg-pixels-big);*/
+        background: #fff;
         height: 83px;
         width: $sidebar-width;
         position: absolute;
@@ -729,6 +730,24 @@ body{
     .list {
         font-size: 11px;
         line-height: 14px;
+    }
+}
+
+/* STRAVA
+-------------------------------------------- */
+.stats-box {
+    fill: $git-color-1;
+    &.level-1 {
+        fill: $git-color-2;
+    }
+    &.level-2 {
+        fill: $git-color-3;
+    }
+    &.level-3 {
+        fill: $git-color-4;
+    }
+    &.level-4 {
+        fill: $git-color-5;
     }
 }
 
