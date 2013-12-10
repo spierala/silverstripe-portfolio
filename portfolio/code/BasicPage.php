@@ -121,13 +121,14 @@ class BasicPage_Controller extends ContentController {
         $activityWeeks = GroupedList::create($activities->sort('Week'))->groupedBy('Week');
 
         $svgWeeks = '';
-        for($i=22; $i>=0; $i--) {
+        for($i=21; $i>=0; $i--) {
             $weekIndex = $currentWeek - $i;
             $dayOffset = 0;
             $svgWeek = '<g transform="translate('.$weekOffset.', 0)">';
-            for($j=1; $j<=7; $j++) {
+            for($j=7; $j>=1; $j--) {
                 $level = '0';
                 $title = '';
+                //TODO: if there are more activities for one day, then use the one with the highest level
                 foreach($activityWeeks as $activityWeek) {
                     if($activityWeek->Week == $weekIndex) {
                         foreach($activityWeek->Children as $activity) {
@@ -157,6 +158,7 @@ class BasicPage_Controller extends ContentController {
         $bikeActivities = array();
         $runActivities = array();
         $leveledActivities = array();
+        //TODO: handle no result
         $activities = $this->loadActivities();
 
         foreach($activities as $activity) {
@@ -187,7 +189,7 @@ class BasicPage_Controller extends ContentController {
         };
 
         foreach($leveledActivities as $leveledActivity) {
-            $tempActivity = new ViewableData();
+            $tempActivity = new ViewableData($leveledActivity);
             $tempActivity->Name = $leveledActivity->name;
             $tempActivity->Type = $leveledActivity->type;
             $tempActivity->Distance = $leveledActivity->distance;

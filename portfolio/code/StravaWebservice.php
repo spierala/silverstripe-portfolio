@@ -7,8 +7,6 @@ class StravaWebservice extends Controller {
         parent::__construct();
     }
 
-    private static $allowed_actions = array('getActivities' => true);
-
     private function initCurl() {
         $this->cURL = curl_init();
         $options = array(
