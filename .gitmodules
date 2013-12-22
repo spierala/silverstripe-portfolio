@@ -13,3 +13,6 @@
 [submodule "cms"]
 	path = cms
 	url = https://github.com/silverstripe/silverstripe-cms.git
+[submodule "fluent"]
+	path = fluent
+	url = https://github.com/tractorcow/silverstripe-fluent.git
