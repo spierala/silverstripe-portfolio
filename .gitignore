@@ -7,3 +7,4 @@ log/
 _ss_environment.php
 _resampled
 assets/*
+fluent.yml
