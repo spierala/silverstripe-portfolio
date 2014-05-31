@@ -71,7 +71,7 @@ class Page extends BasicPage {
     /* ILIKE COUNTER
     -------------------------------------------- */
     public function getIlikeLink() {
-        return $this->URLSegment.'/ilike';
+        return $this->Link().'/ilike';
     }
 
     public function countUp() {
