@@ -7,6 +7,7 @@
         </div>
     </article>
     <aside class="more-info-box">
+        <% include LocaleMenu %>
         <% include Tags %>
         <% loop ProjectAttributes %>
             <div class="attribute-box">

@@ -7,6 +7,7 @@
         </div>
     </article>
     <aside class="more-info-box">
+        <% include LocaleMenu %>
         <% include Social %>
     </aside>
 </div>

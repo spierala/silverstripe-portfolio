@@ -326,6 +326,14 @@ body{
     a {
         color: #a4c400;
     }
+    .attribute-box.locales {
+        .list-item {
+            border-right: 1px solid #fff;
+        }
+        a {
+            color: #fff !important;
+        }
+    }
 }
 
 /* BLOGENTRIES PAGE
@@ -729,6 +737,28 @@ body{
     .list {
         font-size: 11px;
         line-height: 14px;
+    }
+}
+
+.attribute-box.locales {
+    @include clearfix;
+    .title {
+        padding-bottom: 8px;
+    }
+    .list-item {
+        display: block;
+        float: left;
+        border-left: 1px solid $dark-grey;
+        padding-left: 5px;
+        margin-left: 5px;
+        a {
+            color: $dark-grey;
+        }
+        &.first {
+            border: none;
+            padding-left: 0;
+            margin-left: 0;
+        }
     }
 }
 

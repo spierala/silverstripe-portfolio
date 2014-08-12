@@ -33,6 +33,7 @@
         </div>
     </article>
     <aside class="more-info-box">
+        <% include LocaleMenu %>
         <% include Tags %>
         <% uncached %>
             <% include Social %>
