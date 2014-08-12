@@ -1,6 +1,6 @@
 <% if Locales %>
     <div class="attribute-box locales">
-        <h5 class="title"><%t General.Languages "Artikel Sprachen" %></h5>
+        <h5 class="title"><%t General.Languages "Artikel Sprachen" %>:</h5>
         <nav class="locale-menu">
             <ul>
                 <% loop Locales %>
