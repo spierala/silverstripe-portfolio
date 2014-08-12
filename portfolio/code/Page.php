@@ -111,7 +111,7 @@ class Page_Controller extends BasicPage_Controller {
     //Counter
     public function ilike($arguments = null) {
 		$this->countUp();
-        $this->republish($this->Link()); //trigger cache update //TODO: better use staticpublishqueue
+        $this->doPublish($this->Link()); //trigger cache update //TODO: better use staticpublishqueue
 		if($this->request->isAjax()) {
 			return $this->getCount();
 		}
